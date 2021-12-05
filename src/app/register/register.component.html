@@ -1,0 +1,81 @@
+
+<div fxLayoutAlign="center center" class="mainContaier">
+    <div fxLayoutAlign="center center">
+        <div fxLayout="column" class="registerContainer">
+            <form [formGroup]="addCustomerFG" (ngSubmit)="onSubmit()">
+                <div fxLayout="row" class="toolBarRow" fxLayoutAlign="center center">
+                    <mat-toolbar class="toolBar" fxLayoutAlign="center center">
+                        <span>Register Customer</span>
+                    </mat-toolbar>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlex="auto">
+                        <mat-label>Pan Number</mat-label>
+                        <input matInput placeholder="Enter Pan Number" formControlName="PanNumber" (focusout)="fnFocusOut()" (keyup)="fnVerifyPan($event)">
+                    </mat-form-field>
+                    <mat-spinner class="spinner" style="margin-left: 40px;" [diameter]="20" *ngIf="showSpinner"></mat-spinner>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlex>
+                        <mat-label>Full Name</mat-label>
+                        <input matInput  formControlName="Name" readonly>
+                    </mat-form-field>
+                    <!-- <span *ngIf="showName"> {{obj[0].Name}}</span> -->
+                    
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlex="auto">
+                        <mat-label>Mobile</mat-label>
+                        <input matInput  formControlName="Mobile">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlex="auto">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="Email">
+                    </mat-form-field>
+                </div>
+                <h4 style="margin-left: 10px; height:10px;"><strong>Address:</strong></h4>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlexOffset="20px" fxFlex="auto">
+                        <mat-label>Line1</mat-label>
+                        <input matInput formControlName="Address1">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlexOffset="20px" fxFlex="auto">
+                        <mat-label>Line2</mat-label>
+                        <input matInput formControlName="Address2">
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlexOffset="20px" fxFlex="auto">
+                        <mat-label>Post Code</mat-label>
+                        <input matInput formControlName="PostCode" (focusout)="GetPostCode($event)" >
+                    </mat-form-field>
+
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlexOffset="20px" fxFlex="auto">
+                        <mat-label>State</mat-label>
+                        <mat-select formControlName="State">
+                            <mat-option *ngFor="let state of oneState" [value]="state.State">{{state.State}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <mat-form-field appearance="legacy" fxFlexOffset="20px" fxFlex="auto">
+                        <mat-label >City</mat-label>
+                        <mat-select formControlName="City">
+                            <mat-option *ngFor="let city of oneCity" [value]="city.City">{{city.City}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="eleRow">
+                    <button mat-raised-button color="primary" class="btnregister" fxFlex>Register</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>

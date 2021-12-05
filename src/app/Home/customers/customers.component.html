@@ -1,0 +1,28 @@
+<div>
+    <mat-toolbar class="toolBar">
+    <span><h1>Customer List</h1></span>
+</mat-toolbar>
+    <table border="1" style="width: 70%;background-color:rgb(160, 180, 200);border: 1px solid black;margin:20px">
+        <tr>
+            <th>Name</th>
+            <th>Pan Number</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Pin Code</th>
+            <th>State</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>{{custData.Name}}</td>
+            <td>{{custData.PanNumber}}</td>
+            <td>{{custData.Email}}</td>
+            <td>{{custData.Mobile}}</td>
+            <td>{{custData.Address1}}</td>
+            <td>{{custData.PostCode}}</td>
+            <td>{{custData.State}}</td>
+            <td>{{custData.City}}</td>
+        </tr>
+    </table>
+    
+</div>
